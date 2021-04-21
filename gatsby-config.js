@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -8,10 +10,11 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-root-import`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+        src: path.join(__dirname, 'src'),
       },
     },
     `gatsby-transformer-sharp`,
@@ -34,3 +37,4 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
+
